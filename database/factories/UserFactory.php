@@ -23,3 +23,14 @@ $factory->define(Odin\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(\Odin\Customer::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'city' => $faker->city,
+        'state' => $faker->stateAbbr,
+        'birthdate' => $faker->datetime(),
+        'special_customer' => $faker->boolean,
+    ];
+});
