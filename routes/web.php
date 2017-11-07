@@ -19,4 +19,8 @@ Route::get('/', function () {
 //    $customer->save();
 //    dd($customer->toArray());
 
+//    GET CUSTOMER
+//    $customer = Customer::find(51);
+//    dd($customer->birthdate);
+
 });
