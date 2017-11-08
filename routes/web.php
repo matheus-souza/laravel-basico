@@ -24,4 +24,16 @@ Route::get('/', function () {
 //    $customer = Customer::find(51);
 //    dd($customer->birthdate);
 
+//    UPDATE CUSTOMER
+//    $data = [
+//        'name' => 'Nome novo',
+//        'birthdate' => '1998-02-12 00:00:00',
+//    ];
+//
+//    $customer = Customer::find(51);
+//    $customer->name = 'Novo nome';
+//    SAVE METHOD
+//    $customer->save();
+//    UPDATE METHOD
+//    $customer->update($data);
 });
