@@ -13,4 +13,8 @@ class Customer extends Model
         'birthdate' => 'date',
     ];
 
+    public function purchases()
+    {
+        return $this->hasMany(Purchases::class);
+    }
 }
