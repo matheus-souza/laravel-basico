@@ -287,6 +287,7 @@ services:
       build: ./postgres
       volumes:
         - ${DATA_SAVE_PATH}/postgres:/var/lib/postgresql/data
+        - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
       ports:
         - "${POSTGRES_PORT}:5432"
       environment:
