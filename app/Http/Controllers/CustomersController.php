@@ -3,6 +3,7 @@
 namespace Odin\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Odin\Customer;
 
 class CustomersController extends Controller
 {
@@ -13,7 +14,9 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::all();
+
+        return view('customers.index')->with(compact('customers'));
     }
 
     /**
