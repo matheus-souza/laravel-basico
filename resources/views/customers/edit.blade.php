@@ -6,7 +6,9 @@
 
 @section('content')
 
-    {!! Form::model($customer, ['url' => 'foo/bar']) !!}
+
+    {!! Form::model($customer, ['route' => ['clientes.update', $customer->id]]) !!}
+        <input type="hidden" name="_method" value="PUT">
         @include('customers.partials.form')
     {!! Form::close() !!}
 @stop
