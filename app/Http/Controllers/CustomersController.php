@@ -75,7 +75,14 @@ class CustomersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->only('name', 'special_customer', 'city', 'state');
+        $input['special_customer'] = isset($input['special_customer']);
+
+        $customer = Customer::find($id);
+        $customer->fill($input);
+        $customer->save();
+
+        return redirect()->route('clientes.edit', $id)->with(['success' => 'Cliente salvo com sucesso!']);
     }
 
     /**
