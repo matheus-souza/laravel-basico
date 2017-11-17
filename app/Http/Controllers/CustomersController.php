@@ -4,6 +4,7 @@ namespace Odin\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Odin\Customer;
+use Odin\Http\Requests\CustomerFormRequest;
 
 class CustomersController extends Controller
 {
@@ -73,13 +74,8 @@ class CustomersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CustomerFormRequest $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'city' => 'required',
-        ]);
-
         $input = $request->only('name', 'special_customer', 'city', 'state');
         $input['special_customer'] = isset($input['special_customer']);
 
