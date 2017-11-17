@@ -75,6 +75,11 @@ class CustomersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'city' => 'required',
+        ]);
+
         $input = $request->only('name', 'special_customer', 'city', 'state');
         $input['special_customer'] = isset($input['special_customer']);
 

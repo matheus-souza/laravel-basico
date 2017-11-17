@@ -6,6 +6,14 @@
 
 @section('content')
 
+    @if(count($errors->all()) > 0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <dt>{{ $error }}</dt>
+            @endforeach
+        </div>
+    @endif
+
     @if(Session::has('success'))
     <div class="alert alert-success">
         {{ Session::get('success') }}
