@@ -21,8 +21,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            {!! Form::label('especial_customer', 'Cliente especial', ['class' => 'control-label']) !!}
-            {!! Form::checkbox('special_customer', $customer->special_customer, ['class' => 'form-control']) !!}
+            {!! Form::label('special_customer', 'Cliente especial', ['class' => 'control-label']) !!}
+            {!! Form::checkbox('special_customer', true, $customer->special_customer, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>
